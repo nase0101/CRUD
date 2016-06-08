@@ -54,5 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   #get "welcome/say_hello" => "welcome#say"
-  match ':controller(/:action(/:id(.:format)))', :via => :all
+  resources :events
+  #match ':controller(/:action(/:id(.:format)))', :via => :all
 end
