@@ -1,4 +1,6 @@
-<%= @event.name %>
-<%= simple_format(@event.description) %>
+<li class="list-group-item">
+  <%= @event.name %>
+  <%= simple_format(@event.description) %>
+<li>
 
 <p><%= link_to 'Back to index', events_path %></p>

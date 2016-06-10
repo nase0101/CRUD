@@ -1,6 +1,6 @@
-<ul>
+<ul class="list-group">
   <% @events.each do |event| %>
-    <li>
+    <li class="list-group-item">
  	  <%= event.name %>
       <%= link_to "Show", event_path(event) %>
       <%= link_to 'Edit', edit_event_path(event) %>
