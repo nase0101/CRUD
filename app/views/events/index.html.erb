@@ -1,11 +1,21 @@
-<ul class="list-group">
-  <% @events.each do |event| %>
-    <li class="list-group-item">
- 	  <%= event.name %>
-      <%= link_to "Show", event_path(event) %>
+<h1 >CRUD EXAMPLE</h1>
+<br><br>
+<table class="table">
+  <tr>
+  	<th>NAME</th>
+  	<th>FUNCTION</th>
+  </tr>
+  <% @events.each do |event| %>    
+  <tr>
+    <td><%= event.name %></td>
+  	<td>
+  	  <%= link_to "Show", event_path(event) %>
       <%= link_to 'Edit', edit_event_path(event) %>
-      <%= button_to 'Delete', event_path(event), :method => :delete, :data => { :confirm => "Are you sure?" } %>
-    </li>
+      <%= link_to 'Delete', event_path(event), :method => :delete, :data => { :confirm => "Are you sure?" } %>  	
+    </td>
+  </tr>
   <% end %>
-</ul>
-<%= link_to 'New Event',  new_event_path %>
+  <tr><%= button_to 'New Event',  new_event_path, :method => :get %></tr>
+</table>
+
+<%= paginate @events %>
